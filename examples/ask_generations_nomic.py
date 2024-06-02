@@ -5,7 +5,7 @@
 # needs 'nomic' as a pip dependency to be installed
 # for more info on how to LoRA works: https://arxiv.org/pdf/2106.09685.pdf
 
-from gpt4all import GPT4All
+from pygpt4all import GPT4All
 
 #m = GPT4All("./ggml-gpt4all-l13b-snoozy.bin")
 m = GPT4All("orca-mini-3b.ggmlv3.q4_0.bin")
