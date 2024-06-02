@@ -5,15 +5,24 @@
 # needs 'nomic' as a pip dependency to be installed
 # for more info on how to LoRA works: https://arxiv.org/pdf/2106.09685.pdf
 
-from pygpt4all import GPT4All
+from pygpt4all import GPT4All_J
 
 #m = GPT4All("./ggml-gpt4all-l13b-snoozy.bin")
-m = GPT4All("orca-mini-3b.ggmlv3.q4_0.bin")
+model = GPT4All("ggml-gpt4all-j-v1.3-groovy.bin")
 
-with m.chat_session():
-    response = m.generate(prompt='write me a story about a lonely computer', temp=0)
-    print(response)
-    print(m.current_chat_session)
+while True:
+    try:
+        prompt = input("You: ", flush=True)
+        if prompt == '':
+            continue
+        elif prompt == "stop":
+            break
+        print(f"AI:", end='')
+        for token in model.generate(prompt):
+            print(f"{token}", end='', flush=True)
+        print()
+    except KeyboardInterrupt:
+        break
 
 
 # available parameters in model.generate:
