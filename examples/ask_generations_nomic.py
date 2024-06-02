@@ -8,7 +8,7 @@
 from pygpt4all import GPT4All_J
 
 #m = GPT4All("./ggml-gpt4all-l13b-snoozy.bin")
-model = GPT4All("ggml-gpt4all-j-v1.3-groovy.bin")
+model = GPT4All_J("ggml-gpt4all-j-v1.3-groovy.bin")
 
 while True:
     try:
